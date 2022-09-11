@@ -13,10 +13,15 @@
     
     
     // testando a classe User
+    // $user = new User(['name' => 'João', 'email' => 'joao@joao.com']);
+    // print_r($user->name); //método get em uso
+    // //alterando dados com __set:
+    // $user->email = 'joaopedro@joao.com';
+    // echo '<br>';
+    // print_r($user->email);
+
+    // implementando método getSelect():
     $user = new User(['name' => 'João', 'email' => 'joao@joao.com']);
-    print_r($user->name); //método get em uso
-    //alterando dados com __set:
-    $user->email = 'joaopedro@joao.com';
-    echo '<br>';
-    print_r($user->email);
+    // echo $user -> getSelect('id, name');
+    echo User::getSelect(['name' => 'Chaves', 'email' => 'chaves@cod3r.com.br']);
 ?>
