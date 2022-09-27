@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Informe o seu email..." autofocus>
+                        <input type="email" name="email" value="<?= $email ?>" id="email" class="form-control" placeholder="Informe o seu email..." autofocus>
                     </div>
                 
                     <div class="form-group">
@@ -38,6 +38,5 @@
             </div>
         </div>
     </form>
-
 </body>
 </html>
