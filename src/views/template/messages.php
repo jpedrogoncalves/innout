@@ -6,11 +6,18 @@
         ];
     }
 
+
+    $alertType = '';
+    if($message['type'] === 'error'){
+        $alertType = 'danger';
+    } else {
+        $alertType = 'success';
+    }
 ?>
 
 <?php if($message): ?>
 
-<div class="my-3 alert alert-danger" role="alert">
+<div class="my-3 alert alert-<?= $alertType ?>" role="alert">
     <?= $message['message']?>
 </div>
 

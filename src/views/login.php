@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,10 +22,10 @@
                     <i class="icofont-runner-alt-1 ml-1"></i>
                 </div>
                 <div class="card-body">
-                    <?php include(VIEW_PATH . '/template/messages.php'); ?>
+                    <?php include(TEMPLATE_PATH . '/messages.php'); ?>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" value="<?= $email ?>" id="email" class="form-control" placeholder="Informe o seu email..." autofocus>
+                        <input type="email" id="email" name="email" class="form-control <?= $exception->get('email') ? 'is-invalid': ''?>" value="<?= $email?>?" placeholder="Informe o seu email..." autofocus> <!-- erro >:( -->
                     </div>
                 
                     <div class="form-group">

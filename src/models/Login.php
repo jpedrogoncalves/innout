@@ -3,7 +3,24 @@
 loadModel('User');
 
 class Login extends Model{
+    public function validate() {
+        $errors = [];
+
+        if(!$this->email){
+            $errors['email'] = 'Email é um campo obrigatório!';
+        }
+
+        if(!$this->password){
+            $errors['email'] = 'Por favor, informe a senha!';
+        }
+
+        if(count($errors) > 0){
+            throw new ValidationException($errors);
+        }
+    }
+
     public function checkLogin(){
+        $this->validate();
         $user = User::getOne(['email' => $this->email]);
         if($user){
 
