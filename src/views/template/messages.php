@@ -6,7 +6,6 @@
         ];
     }
 
-
     $alertType = '';
     if($message['type'] === 'error'){
         $alertType = 'danger';

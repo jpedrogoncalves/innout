@@ -25,12 +25,12 @@
                     <?php include(TEMPLATE_PATH . '/messages.php'); ?>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control <?= $exception->get('email') ? 'is-invalid': ''?>" value="<?= $email?>?" placeholder="Informe o seu email..." autofocus> <!-- erro >:( -->
+                        <input type="email" id="email" name="email" class="form-control" onBlur="validateEmail()" placeholder="Informe o seu email..." autofocus> <!-- erro >:( -->
                     </div>
                 
                     <div class="form-group">
                         <label for="password">Senha:</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Informe sua senha...">
+                        <input type="password" name="password" id="password" class="form-control" onBlur="validatePassword()" placeholder="Informe sua senha...">
                     </div>
                 </div>
                 <div class="card-footer">
@@ -38,6 +38,30 @@
                 </div>
             </div>
         </div>
+
+       
     </form>
+
+     <script>
+            function validateEmail(){
+                var email = document.querySelector('#email');
+
+                if(!email.checkValidity()){
+                    document.querySelector('#email').classList.add('is-invalid');
+                }
+
+                console.log(!email.checkValidity());
+            }
+
+            function validatePassword(){
+                var password = document.querySelector('#password');
+
+                if(!password.checkValidity()){
+                    document.querySelector('#password').classList.add('is-invalid');
+                }
+
+                console.log(!password.checkValidity());
+            }
+        </script>
 </body>
 </html>
